@@ -72,7 +72,7 @@ pipeline {
         stage('OCI image build') {
           steps {
             container('kaniko') {
-              sh '/kaniko/executor -f "$(pwd)/Dockerfile-nonrootuser" -c "$(pwd)" --insecure --skip-tls-verify --cache=true --destination=docker.io/b1singh/dso-demo --verbosity=debug' 
+              sh '/kaniko/executor -f "$(pwd)/Dockerfile-nonrootuser" -c "$(pwd)" --insecure --skip-tls-verify --cache=true --destination=docker.io/b1singh/dso-demo:1.0 --verbosity=debug' 
               }
             }
           }
